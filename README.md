@@ -1,198 +1,81 @@
 
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nels1Rocks | Heavy Radio</title>
-    <!-- Fonte estilo rádio antigo / terminal -->
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #000; /* Fundo sempre preto */
-            color: #ffcc00; /* Texto amarelo */
-            font-family: 'VT323', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        #radio-shell {
-            width: 420px;
-            background: #111;
-            border: 5px solid #333;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 0 50px rgba(0,0,0,1), inset 0 0 20px #000;
-            text-align: center;
-        }
-
-        .header-title {
-            background-color: #ffcc00;
-            color: #000;
-            font-size: 28px;
-            padding: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            border: 2px solid #000;
-        }
-
-        /* Display de Rádio Antigo */
-        .radio-display {
-            background-color: #1a1a1a;
-            border: 4px inset #333;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-            overflow: hidden;
-            box-shadow: inset 0 0 15px #000;
-        }
-
-        .track-info {
-            font-size: 9pt; /* Máximo 9 conforme instrução */
-            color: #00ff41; /* Verde fósforo antigo */
-            text-transform: uppercase;
-            white-space: nowrap;
-            letter-spacing: 1px;
-            text-shadow: 0 0 8px #00ff41;
-        }
-
-        .controls-row {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 15px;
-        }
-
-        .btn-radio {
-            background: #222;
-            color: #ffcc00;
-            border: 3px outset #444;
-            padding: 10px 15px;
-            font-family: 'VT323', monospace;
-            cursor: pointer;
-            font-size: 16px;
-            min-width: 80px;
-        }
-
-        .btn-radio:active {
-            border-style: inset;
-            background: #000;
-        }
-
-        .mixer-info {
-            font-size: 8pt;
-            color: #444;
-            text-align: left;
-            border-top: 1px solid #222;
-            padding-top: 10px;
-            line-height: 1.2;
-        }
-
-        /* Esconde o player real do Google */
-        #yt-api-frame {
-            position: absolute;
-            left: -9999px;
-            visibility: hidden;
-        }
-    </style>
-</head>
-<body>
-
-<div id="radio-shell">
-    <div class="header-title">NELS1ROCKS</div>
+    <title>Nels1Rocks Radio - Heavy Metal</title>
+    <!-- Importação das fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <div class="radio-display">
-        <div id="track-text" class="track-info">SISTEMA OFFLINE - PRESS PLAY</div>
-    </div>
-
-    <div class="controls-row">
-        <button class="btn-radio" onclick="prev()">PREV</button>
-        <button class="btn-radio" id="powerBtn" onclick="togglePower()" style="background: #300; border-color: #600;">ON/OFF</button>
-        <button class="btn-radio" onclick="next()">NEXT</button>
-    </div>
-
-    <div class="mixer-info">
-        MODE: 24/7 SHUFFLE MIXER<br>
-        CODEC: THRASH/HARDCORE/PUNK/METAL<br>
-        SYNE3 LIQUIDITY STATUS: 0.83 CASH/DEBT
-    </div>
-</div>
-
-<!-- Player oculto -->
-<div id="yt-api-frame">
-    <div id="player"></div>
-</div>
-
-<script>
-    // Playlist Hardcore/Metal para o Nels1Rocks
-    const playlist = [
-        {id: "xnKhs2z8KwI", b: "Metallica", t: "Master of Puppets"},
-        {id: "nM__lPTWThU", b: "Judas Priest", t: "Painkiller"},
-        {id: "z8ZqFlw6hYg", b: "Slayer", t: "Raining Blood"},
-        {id: "9d4ui9q7eDM", b: "Megadeth", t: "Holy Wars"},
-        {id: "FuO3hHwQ54Q", b: "Helloween", t: "Eagle Fly Free"},
-        {id: "L397TWLwrUU", b: "Sepultura", t: "Arise"},
-        {id: "-KTsXHvlAJA", b: "Dead Kennedys", t: "Holiday in Cambodia"},
-        {id: "WxnN05vOuSM", b: "Iron Maiden", t: "Number of the Beast"}
-    ];
-
-    let player;
-    let idx = Math.floor(Math.random() * playlist.length); // Shuffle inicial
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '0', width: '0',
-            videoId: playlist[idx].id,
-            events: { 'onStateChange': stateChange }
-        });
-    }
-
-    function togglePower() {
-        const btn = document.getElementById('powerBtn');
-        if (player.getPlayerState() === 1) {
-            player.pauseVideo();
-            btn.style.background = "#300";
-            document.getElementById('track-text').innerText = "PAUSED - STANDBY";
-        } else {
-            player.playVideo();
-            btn.style.background = "#004400";
-            btn.style.borderColor = "#00ff00";
-            updateDisplay();
+    <style>
+        :root {
+            --bg-deep: #0a0a0c;
+            --bg-card: #121216;
+            --bg-hover: #1c1c24;
+            --text-main: #f0f0f5;
+            --text-muted: #8a8a9e;
+            --border: #262633;
+            --border-active: #e50914;
+            --accent: #e50914;
+            --accent-glow: rgba(229, 9, 20, 0.25);
         }
-    }
 
-    function updateDisplay() {
-        const s = playlist[idx];
-        document.getElementById('track-text').innerText = `${s.b} - ${s.t}`;
-    }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
 
-    function stateChange(e) {
-        if (e.data == 0) next(); // Auto-play 24/7
-    }
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-    function next() {
-        idx = (idx + 1) % playlist.length;
-        player.loadVideoById(playlist[idx].id);
-        updateDisplay();
-    }
+        .app-container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px var(--accent-glow);
+        }
 
-    function prev() {
-        idx = (idx - 1 + playlist.length) % playlist.length;
-        player.loadVideoById(playlist[idx].id);
-        updateDisplay();
-    }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
 
-    // Carrega API do Google
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-</script>
+        .brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
 
-</body>
-</html>
+        .brand span { 
+            color: var(--accent); 
+        }
+
+        .live-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            background: rgba(229, 9, 20, 0.1);
+            color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border-
