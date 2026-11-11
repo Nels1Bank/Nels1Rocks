@@ -1,81 +1,49 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nels1Rocks</title></head>
+<body style="background:#000;color:#fff;font-family:Arial;padding:16px;text-align:center">
+<h1 style="color:#39ff14">Nels1Rocks.Radio</h1>
+<p>● HEAVY METAL - RÁDIO AO VIVO</p>
 
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nels1Rocks Radio - Heavy Metal</title>
-    <!-- Importação das fontes Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-deep: #0a0a0c;
-            --bg-card: #121216;
-            --bg-hover: #1c1c24;
-            --text-main: #f0f0f5;
-            --text-muted: #8a8a9e;
-            --border: #262633;
-            --border-active: #e50914;
-            --accent: #e50914;
-            --accent-glow: rgba(229, 9, 20, 0.25);
-        }
+<div style="width:140px;height:140px;margin:10px auto;border-radius:50%;background:#111;color:#39ff14;font-size:65px;display:flex;align-items:center;justify-content:center;border:4px solid #39ff14;box-shadow:0 0 20px #39ff14,0 0 40px #39ff14">🤘</div>
 
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-        }
+<p style="font-weight:bold;color:#39ff14">🔴 AO VIVO - APERTA O PLAY</p>
 
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+<audio controls preload="none" style="width:100%;max-width:400px">
+<source src="https://ice1.somafm.com/metal-128-mp3" type="audio/mpeg">
+<source src="https://stream.laut.fm/metal" type="audio/mpeg">
+<source src="https://stream.zeno.fm/0r0xa792kwzuv" type="audio/mpeg">
+</audio>
 
-        .app-container {
-            width: 100%;
-            max-width: 440px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px var(--accent-glow);
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .brand {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .brand span { 
-            color: var(--accent); 
-        }
-
-        .live-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            background: rgba(229, 9, 20, 0.1);
-            color: var(--accent);
-            padding: 5px 10px;
-            border-radius: 20px;
-            border: 1px solid var(--border-
+<div style="background:#111;color:#fff;border-radius:20px;padding:16px;max-width:480px;margin:16px auto;text-align:left;border:1px solid #39ff14">
+<p style="text-align:center;color:#39ff14"><b>PROGRAMAÇÃO - HEAVY METAL 24H</b></p>
+<p style="color:#39ff14"><b>🔥 THRASH</b></p>
+<ol style="line-height:26px">
+<li>Metallica - Master of Puppets</li>
+<li>Metallica - Enter Sandman</li>
+<li>Metallica - One</li>
+<li>Slayer - Raining Blood</li>
+<li>Megadeth - Symphony of Destruction</li>
+<li>Pantera - Cowboys From Hell</li>
+<li>Sepultura - Roots Bloody Roots</li>
+</ol>
+<p style="color:#39ff14"><b>🤘 CLASSIC</b></p>
+<ol style="line-height:26px">
+<li>Iron Maiden - The Trooper</li>
+<li>Iron Maiden - Fear of The Dark</li>
+<li>Black Sabbath - Paranoid</li>
+<li>Black Sabbath - Iron Man</li>
+<li>Judas Priest - Breaking The Law</li>
+<li>Motörhead - Ace of Spades</li>
+<li>Ozzy Osbourne - Crazy Train</li>
+<li>Dio - Holy Diver</li>
+</ol>
+<p style="color:#39ff14"><b>💀 PESADO</b></p>
+<ol style="line-height:26px">
+<li>Gojira - Amazonia</li>
+<li>System of a Down - Chop Suey!</li>
+<li>Rammstein - Du Hast</li>
+<li>Slipknot - Psychosocial</li>
+<li>Ghost - Square Hammer</li>
+</ol>
+</div>
+</body></html>
